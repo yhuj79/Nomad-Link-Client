@@ -8,18 +8,18 @@ function Header() {
   return (
     // <HeaderDiv m={m}>
     <HeaderDiv>
-      <nav style={{ display: "flex" }}>
-        <SectionLeft>
+      <Box>
+        <DivLeft>
           <Logo>Nomad Link</Logo>
-        </SectionLeft>
-        <SectionRight>
+        </DivLeft>
+        <DivRight>
           <Search />
           <Login>로그인</Login>
           <Register>회원가입</Register>
-        </SectionRight>
-      </nav>
-      <nav style={{ display: "flex" }}>
-        <SectionLeft>
+        </DivRight>
+      </Box>
+      <Box>
+        <DivLeft>
           <Menu>
             <MenuListIcon sx={muiMenuIcon} />
             <MenuIcon>채용</MenuIcon>
@@ -28,14 +28,14 @@ function Header() {
             <MenuIcon>커뮤니티</MenuIcon>
             <MenuIcon>이벤트</MenuIcon>
           </Menu>
-        </SectionLeft>
-        <SectionRight>
+        </DivLeft>
+        <DivRight>
           <PersonIcon sx={muiServiceIcon} />
           <MenuIcon>개인 서비스</MenuIcon>
           <ApartmentIcon sx={muiServiceIcon} />
           <MenuIcon>기업 서비스</MenuIcon>
-        </SectionRight>
-      </nav>
+        </DivRight>
+      </Box>
     </HeaderDiv>
   );
 }
@@ -43,14 +43,17 @@ const HeaderDiv = styled.header`
   width: 1000px;
   /* background-color: ${(props) => (props.m === 0 ? "green" : "red")}; */
 `;
-const SectionLeft = styled.ul`
+const Box = styled.div`
+  display: flex;
+`;
+const DivLeft = styled.div`
   display: flex;
   align-items: center;
   float: left;
   margin: 20px auto 20px 0;
   padding: 0;
 `;
-const SectionRight = styled.ul`
+const DivRight = styled.div`
   display: flex;
   align-items: center;
   float: right;
@@ -87,9 +90,10 @@ const Register = styled.button`
   border-radius: 20px;
   border: 1px solid #000;
 `;
-const Menu = styled.div`
+const Menu = styled.ul`
   display: flex;
   align-items: center;
+  padding-left: 0;
 `;
 const muiMenuIcon = {
   margin: "auto 10px",

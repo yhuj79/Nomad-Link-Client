@@ -1,14 +1,21 @@
-import React from 'react';
-import RecruitState from '../components/commons/RecruitState';
-import RecruitSummary from '../components/units/RecruitSummary';
+import styled from "styled-components";
+import RecruitState from "../components/commons/RecruitState";
+import RecruitForm from "../components/units/RecruitForm";
 
 function PageRecruit() {
-    return (
-        <div>
-            <RecruitSummary />
-            <RecruitState />
-        </div>
-    );
+  return (
+    <main>
+      <Title>
+        <h2>간편하게 채용공고를 작성해주세요.</h2>
+        <h2>리크루팅 전문 컨설턴트가 빠른 해외 개발자 채용을 지원해드립니다.</h2>
+      </Title>
+      <RecruitState />
+      <RecruitForm />
+    </main>
+  );
 }
-
+const Title = styled.section`
+  margin: 100px;
+  text-align: center;
+`;
 export default PageRecruit;

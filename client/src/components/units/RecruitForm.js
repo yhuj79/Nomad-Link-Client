@@ -1,6 +1,36 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 function RecruitForm() {
+  const [inputs, setInputs] = useState({
+    nameCompany: "",
+    namePic: "",
+    phoneNumberPic: "",
+    emailPic: "",
+  });
+  const { nameCompany, namePic, phoneNumberPic, emailPic } = inputs;
+
+  function addClient() {}
+
+  function onChange(e) {
+    setInputs({
+      ...inputs,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleForSubmit(e) {
+    e.preventDefault();
+    // addClient().then((res) => console.log(res));
+    setInputs({
+      nameCompany: "",
+      namePic: "",
+      phoneNumberPic: "",
+      emailPic: "",
+    });
+    // window.location.reload();
+  }
+
   return (
     <Section>
       <Title>채용이 확정되기 전에는 어떠한 비용도 청구되지 않습니다.</Title>
@@ -8,21 +38,42 @@ function RecruitForm() {
         <Flex>
           <InputDiv>
             <Label>회사명</Label>
-            <InputS placeholder="ex) 노마드 링크"></InputS>
+            <InputS
+              type="text"
+              placeholder="ex) 노마드 링크"
+              name="nameCompany"
+              value={nameCompany}
+              onChange={onChange}
+            ></InputS>
           </InputDiv>
           <InputDiv>
             <Label>담당자 이름</Label>
-            <InputS placeholder="ex) 홍길동"></InputS>
+            <InputS
+              placeholder="ex) 홍길동"
+              name="namePic"
+              value={namePic}
+              onChange={onChange}
+            ></InputS>
           </InputDiv>
         </Flex>
         <Flex>
           <InputDiv>
             <Label>담당자 연락처</Label>
-            <InputS placeholder="ex) 010-1234-5678"></InputS>
+            <InputS
+              placeholder="ex) 010-1234-5678"
+              name="phoneNumberPic"
+              value={phoneNumberPic}
+              onChange={onChange}
+            ></InputS>
           </InputDiv>
           <InputDiv>
             <Label>이메일</Label>
-            <InputS placeholder="ex) qwer1234@abc.com"></InputS>
+            <InputS
+              placeholder="ex) qwer1234@abc.com"
+              name="emailPic"
+              value={emailPic}
+              onChange={onChange}
+            ></InputS>
           </InputDiv>
         </Flex>
       </div>
@@ -87,7 +138,11 @@ function RecruitForm() {
           <InputM placeholder="ex) 학사 졸업자 우대"></InputM>
         </Block>
       </div>
-      <SendButton>채용 공고 전송하기</SendButton>
+      <SendButton onClick={handleForSubmit}>채용 공고 전송하기</SendButton>
+      <p>{nameCompany}</p>
+      <p>{namePic}</p>
+      <p>{phoneNumberPic}</p>
+      <p>{emailPic}</p>
     </Section>
   );
 }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MenuListIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import ApartmentIcon from "@mui/icons-material/Apartment";
+import { Link } from "react-router-dom";
 
 function Header() {
   // const m = 0;
@@ -10,7 +11,9 @@ function Header() {
     <HeaderDiv>
       <Box>
         <DivLeft>
-          <Logo>Nomad Link</Logo>
+          <SLink to={"/"}>
+            <Logo>Nomad Link</Logo>
+          </SLink>
         </DivLeft>
         <DivRight>
           <Search />
@@ -30,10 +33,14 @@ function Header() {
           </Menu>
         </DivLeft>
         <DivRight>
-          <PersonIcon sx={muiServiceIcon} />
-          <MenuIcon>개인 서비스</MenuIcon>
-          <ApartmentIcon sx={muiServiceIcon} />
-          <MenuIcon>기업 서비스</MenuIcon>
+          <SLink to={"/"} style={{ display: "flex" }}>
+            <PersonIcon sx={muiServiceIcon} />
+            <MenuIcon>개인 서비스</MenuIcon>
+          </SLink>
+          <SLink to={"/recruit"} style={{ display: "flex" }}>
+            <ApartmentIcon sx={muiServiceIcon} />
+            <MenuIcon>기업 서비스</MenuIcon>
+          </SLink>
         </DivRight>
       </Box>
     </HeaderDiv>
@@ -60,6 +67,7 @@ const DivRight = styled.div`
   margin: 20px 0 20px auto;
 `;
 const Logo = styled.h1`
+  color: #000;
   font-size: 45px;
   font-weight: bold;
   letter-spacing: -1px;
@@ -100,6 +108,7 @@ const muiMenuIcon = {
   fontSize: "30px",
 };
 const muiServiceIcon = {
+  color: "#000",
   marginLeft: "15px",
   marginRight: "-5px",
   fontSize: "30px",
@@ -108,5 +117,9 @@ const MenuIcon = styled.li`
   list-style: none;
   margin: auto 10px;
   font-size: 20px;
+  color: #000;
+`;
+const SLink = styled(Link)`
+  text-decoration: none;
 `;
 export default Header;

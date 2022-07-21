@@ -10,7 +10,7 @@ function RecruitForm() {
   });
   const { nameCompany, namePic, phoneNumberPic, emailPic } = inputs;
 
-  function addClient() {}
+  // function addClient() {}
 
   function onChange(e) {
     setInputs({
@@ -19,7 +19,7 @@ function RecruitForm() {
     });
   }
 
-  function handleForSubmit(e) {
+  function handleFormSubmit(e) {
     e.preventDefault();
     // addClient().then((res) => console.log(res));
     setInputs({
@@ -138,7 +138,7 @@ function RecruitForm() {
           <InputM placeholder="ex) 학사 졸업자 우대"></InputM>
         </Block>
       </div>
-      <SendButton onClick={handleForSubmit}>채용 공고 전송하기</SendButton>
+      <SendButton onClick={handleFormSubmit}>채용 공고 전송하기</SendButton>
       <p>{nameCompany}</p>
       <p>{namePic}</p>
       <p>{phoneNumberPic}</p>

@@ -15,7 +15,7 @@ function PageRecruit() {
   );
 }
 const Title = styled.section`
-  margin: 100px;
+  padding: 100px;
   text-align: center;
 `;
 export default PageRecruit;

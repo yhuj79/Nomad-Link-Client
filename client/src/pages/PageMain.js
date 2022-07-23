@@ -12,7 +12,7 @@ function PageMain() {
   }, []);
 
   return (
-    <div style={{ padding: "30px", backgroundColor: "green", color: "white" }}>
+    <main style={{ padding: "30px", backgroundColor: "green", color: "white" }}>
       <h1>jsonplaceholder</h1>
       <br />
       <div style={{ padding: "30px", backgroundColor: "black" }}>
@@ -23,7 +23,7 @@ function PageMain() {
           readOnly={true}
         />
       </div>
-    </div>
+    </main>
   );
 }
 

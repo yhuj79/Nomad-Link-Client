@@ -3,11 +3,10 @@ import MenuListIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import { Link } from "react-router-dom";
+// import theme from "../../style/Theme";
 
 function Header() {
-  // const m = 0;
   return (
-    // <HeaderDiv m={m}>
     <HeaderDiv>
       <Box>
         <DivLeft>
@@ -48,7 +47,6 @@ function Header() {
 }
 const HeaderDiv = styled.header`
   width: 1000px;
-  /* background-color: ${(props) => (props.m === 0 ? "green" : "red")}; */
 `;
 const Box = styled.div`
   display: flex;

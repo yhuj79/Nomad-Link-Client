@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../style/GlobalStyles";
 
 export const Section = styled.section`
   width: 950px;
@@ -6,16 +7,35 @@ export const Section = styled.section`
   margin: 50px auto;
   background-color: #e7e7e7;
   border-radius: 20px;
+
+  ${media.lessThan("tablet")`
+    width: 700px;
+	`}
+  ${media.lessThan("mobile")`
+    width: 270px;
+	`}
 `;
 export const BoxFlex = styled.div`
   display: flex;
+
+  ${media.lessThan("mobile")`
+    display: block;
+	`}
 `;
 export const BoxBlock = styled.div`
   margin: 10px 55px;
+
+  ${media.lessThan("mobile")`
+    margin: auto;
+	`}
 `;
 export const Hr = styled.hr`
   margin: 25px 35px;
   border: 1px solid #000;
+
+  ${media.lessThan("mobile")`
+    margin: 20px 20px 30px;
+	`}
 `;
 export const InputDiv = styled.div`
   text-align: center;
@@ -23,12 +43,20 @@ export const InputDiv = styled.div`
 `;
 export const Title = styled.h2`
   padding: 30px;
+
+  ${media.lessThan("mobile")`
+    font-size: 18px;
+	`}
 `;
 export const Label = styled.label`
   display: block;
   text-align: left;
   margin-bottom: 5px;
   font-size: 18px;
+
+  ${media.lessThan("mobile")`
+    margin-left: 10px;
+	`}
 `;
 export const InputS = styled.input`
   width: 350px;
@@ -44,13 +72,31 @@ export const InputS = styled.input`
   ::placeholder {
     opacity: 0.7;
   }
+
+  ${media.lessThan("tablet")`
+    width: 250px;
+	`}
+  ${media.lessThan("mobile")`
+    width: 220px;
+	`}
 `;
 export const InputM = styled(InputS)`
   width: 830px;
+
+  ${media.lessThan("tablet")`
+    width: 570px;
+	`}
+  ${media.lessThan("mobile")`
+    width: 220px;
+	`}
 `;
 export const InputR = styled.input`
   margin: 25px;
   margin-right: 5px;
+
+  ${media.lessThan("mobile")`
+    margin: 15px 15px 5px 35px;
+	`}
 `;
 export const InputL = styled.textarea`
   width: 830px;
@@ -69,6 +115,13 @@ export const InputL = styled.textarea`
   ::placeholder {
     opacity: 0.7;
   }
+
+  ${media.lessThan("tablet")`
+    width: 570px;
+	`}
+  ${media.lessThan("mobile")`
+    width: 220px;
+	`}
 `;
 export const SendButton = styled.input`
   background-color: #000;

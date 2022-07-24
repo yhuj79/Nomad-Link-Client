@@ -3,6 +3,7 @@ import ReceiptIcon from "@mui/icons-material/ReceiptLong";
 import ConsultIcon from "@mui/icons-material/Group";
 import WriteIcon from "@mui/icons-material/BorderColor";
 import RecruitStartIcon from "@mui/icons-material/FindInPage";
+import { media } from "../../style/GlobalStyles";
 
 function RecruitState() {
   return (
@@ -34,6 +35,24 @@ function RecruitState() {
           <Phase>채용 시작</Phase>
         </Li>
       </Box>
+      <BoxMobile>
+        <Li>
+          <ReceiptIcon sx={muiIcon} />
+          <Phase>구인 폼 제출</Phase>
+        </Li>
+        <Li>
+          <ConsultIcon sx={muiIcon} />
+          <Phase>컨설턴트 상담</Phase>
+        </Li>
+        <Li>
+          <WriteIcon sx={muiIcon} />
+          <Phase>계약서 작성</Phase>
+        </Li>
+        <Li>
+          <RecruitStartIcon sx={muiIcon} />
+          <Phase>채용 시작</Phase>
+        </Li>
+      </BoxMobile>
     </Section>
   );
 }
@@ -41,6 +60,10 @@ const Section = styled.section`
   text-align: center;
   margin: 20px auto;
   display: block;
+
+  ${media.lessThan("tablet")`
+    zoom: 0.7;
+	`}
 `;
 const Box = styled.div`
   width: 1000px;
@@ -48,7 +71,21 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
+  ${media.lessThan("mobile")`
+    display: none;
+	`}
 `;
+const BoxMobile = styled.div`
+  display: none;
+  width: 270px;
+  margin: auto;
+  justify-content: center;
+
+  ${media.lessThan("mobile")`
+    display: block;
+	`}
+`
 const Circle = styled.div`
   width: 30px;
   height: 30px;
@@ -69,6 +106,10 @@ const Li = styled.div`
   width: 200px;
   justify-content: center;
   margin: 0 30px 0 30px;
+
+  ${media.lessThan("mobile")`
+    margin-bottom: 20px;
+	`}
 `;
 const muiIcon = {
   fontSize: "35px",

@@ -43,6 +43,8 @@ const Section = styled.section`
   display: block;
 `;
 const Box = styled.div`
+  width: 1000px;
+  margin: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;

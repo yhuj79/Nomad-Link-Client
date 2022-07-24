@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PageMain />} />
           <Route path="/recruit" element={<PageRecruit />} />
+          <Route path="/test" element={<Header />} />
         </Routes>
         <Footer />
       </Router>

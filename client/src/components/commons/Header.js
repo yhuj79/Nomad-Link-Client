@@ -3,12 +3,12 @@ import MenuListIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import { Link } from "react-router-dom";
-// import theme from "../../style/Theme";
+import { media } from "../../style/GlobalStyles";
 
 function Header() {
   return (
     <HeaderDiv>
-      <Box>
+      <BoxOne>
         <DivLeft>
           <SLink to={"/"}>
             <Logo>Nomad Link</Logo>
@@ -19,8 +19,8 @@ function Header() {
           <Login>로그인</Login>
           <Register>회원가입</Register>
         </DivRight>
-      </Box>
-      <Box>
+      </BoxOne>
+      <BoxTwo>
         <DivLeft>
           <Menu>
             <MenuListIcon sx={muiMenuIcon} />
@@ -41,15 +41,53 @@ function Header() {
             <MenuIcon>기업 서비스</MenuIcon>
           </SLink>
         </DivRight>
-      </Box>
+      </BoxTwo>
+      <BoxMobile>
+        <SLink to={"/"}>
+          <MenuListIcon sx={muiMobileIcon} />
+        </SLink>
+        <SLink to={"/"}>
+          <PersonIcon sx={muiMobileIcon} />
+        </SLink>
+        <SLink to={"/recruit"}>
+          <ApartmentIcon sx={muiMobileIcon} />
+        </SLink>
+      </BoxMobile>
     </HeaderDiv>
   );
 }
 const HeaderDiv = styled.header`
   width: 1000px;
+  justify-content: center;
+  margin: auto;
+
+  ${media.lessThan("tablet")`
+    width: 700px;
+	`}
+  ${media.lessThan("mobile")`
+    width: 270px;
+	`}
 `;
-const Box = styled.div`
+const BoxOne = styled.div`
   display: flex;
+
+  ${media.lessThan("mobile")`
+    display: inline-block;
+	`}
+`;
+const BoxTwo = styled(BoxOne)`
+  ${media.lessThan("mobile")`
+    display: none;
+	`}
+`;
+const BoxMobile = styled(BoxOne)`
+  display: none;
+
+  ${media.lessThan("mobile")`
+    display: flex;
+    justify-content: center;
+    margin: auto;
+	`}
 `;
 const DivLeft = styled.div`
   display: flex;
@@ -70,6 +108,11 @@ const Logo = styled.h1`
   font-weight: bold;
   letter-spacing: -1px;
   margin-left: 10px;
+
+  ${media.lessThan("mobile")`
+    font-size: 35px;
+    margin-bottom: -10px;
+	`}
 `;
 const Search = styled.input`
   width: 200px;
@@ -78,6 +121,10 @@ const Search = styled.input`
   background-color: #d9d9d9;
   border-radius: 20px;
   border: 1px solid #d5d5d5;
+
+  ${media.lessThan("mobile")`
+    width: 70px;
+	`}
 `;
 const Login = styled.button`
   width: 70px;
@@ -111,13 +158,27 @@ const muiServiceIcon = {
   marginRight: "-5px",
   fontSize: "30px",
 };
+const muiMobileIcon = {
+  color: "#000",
+  marginLeft: "-5px",
+  marginRight: "15px",
+  fontSize: "30px",
+};
 const MenuIcon = styled.li`
   list-style: none;
   margin: auto 10px;
   font-size: 20px;
   color: #000;
+
+  ${media.lessThan("tablet")`
+    font-size: 15px;
+	`}
 `;
 const SLink = styled(Link)`
   text-decoration: none;
+
+  ${media.lessThan("tablet")`
+    margin-left: 30px;
+	`}
 `;
 export default Header;

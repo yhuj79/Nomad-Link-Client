@@ -4,7 +4,7 @@ Nomad-Link Frontend Repository
 
 [:ballot_box_with_check: 전체 프로젝트 Repository](https://github.com/Nomad-Link/Nomad-Link)
 
-[:ballot_box_with_check: 시연 영상](https://www.youtube.com/watch?v=q_i1nkkVJ18&list=LL&index=2&t=7s)
+[:ballot_box_with_check: 시연 영상](https://www.youtube.com/watch?v=3d2bh-dl9CY)
 
 ## :file_folder: 프로젝트 개요
 
